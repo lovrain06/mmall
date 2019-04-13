@@ -114,7 +114,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.6</version>
+      <version>5.1.47</version>
     </dependency>
 
     <dependency>
@@ -185,7 +185,7 @@
 
 
 
-    <!-- mybatis pager -->
+    <!-- mybatis pager helper-->
 
     <dependency>
       <groupId>com.github.pagehelper</groupId>
