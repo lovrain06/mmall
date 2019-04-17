@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-
 <mapper namespace="com.mmall.dao.OrderMapper" >
   <resultMap id="BaseResultMap" type="com.mmall.pojo.Order" >
     <constructor >
@@ -20,24 +19,20 @@
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
-
   <sql id="Base_Column_List" >
     id, order_no, user_id, shipping_id, payment, payment_type, postage, status, payment_time, 
     send_time, end_time, close_time, create_time, update_time
   </sql>
-
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from mmall_order
     where id = #{id,jdbcType=INTEGER}
   </select>
-
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mmall_order
     where id = #{id,jdbcType=INTEGER}
   </delete>
-
   <insert id="insert" parameterType="com.mmall.pojo.Order" >
     insert into mmall_order (id, order_no, user_id, 
       shipping_id, payment, payment_type, 
@@ -50,7 +45,6 @@
       #{sendTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, 
       now(), now())
   </insert>
-
   <insert id="insertSelective" parameterType="com.mmall.pojo.Order" >
     insert into mmall_order
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -142,7 +136,6 @@
       </if>
     </trim>
   </insert>
-
   <update id="updateByPrimaryKeySelective" parameterType="com.mmall.pojo.Order" >
     update mmall_order
     <set >
@@ -188,7 +181,6 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-
   <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.Order" >
     update mmall_order
     set order_no = #{orderNo,jdbcType=BIGINT},
@@ -206,4 +198,19 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </mapper>
